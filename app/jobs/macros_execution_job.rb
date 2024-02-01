@@ -9,6 +9,8 @@ class MacrosExecutionJob < ApplicationJob
 
     conversations.each do |conversation|
       ::Macros::ExecutionService.new(macro, conversation, user).perform
+
+      sleep(8)  # Adiciona um atraso de 8 segundos entre as ações do Macro
     end
   end
 end

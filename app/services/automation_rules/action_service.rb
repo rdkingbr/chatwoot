@@ -12,6 +12,9 @@ class AutomationRules::ActionService < ActionService
       action = action.with_indifferent_access
       begin
         send(action[:action_name], action[:action_params])
+        
+        # Adiciona um atraso de 8 segundos entre as ações
+        sleep(8)
       rescue StandardError => e
         ChatwootExceptionTracker.new(e, account: @account).capture_exception
       end

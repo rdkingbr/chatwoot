@@ -7,9 +7,16 @@ class Macros::ExecutionService < ActionService
     Current.user = user
   end
 
+  class Macros::ExecutionService < ActionService
+  # ...
+
   def perform
     @macro.actions.each do |action|
       action = action.with_indifferent_access
+
+      # Adiciona um atraso de 8 segundos
+      sleep(8)
+
       begin
         send(action[:action_name], action[:action_params])
       rescue StandardError => e
@@ -19,6 +26,10 @@ class Macros::ExecutionService < ActionService
   ensure
     Current.reset
   end
+
+  # ...
+end
+
 
   private
 

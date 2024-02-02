@@ -64,7 +64,7 @@
               v-model="values"
               track-by="id"
               label="name"
-              :placeholder="'Select'"
+              :placeholder="'Selecione'"
               :multiple="true"
               selected-label
               :select-label="$t('FORMS.MULTISELECT.ENTER_TO_SELECT')"
@@ -82,7 +82,7 @@
               v-model="values"
               track-by="id"
               label="name"
-              :placeholder="'Select'"
+              :placeholder="'Selecione'"
               selected-label
               :select-label="$t('FORMS.MULTISELECT.ENTER_TO_SELECT')"
               deselect-label=""

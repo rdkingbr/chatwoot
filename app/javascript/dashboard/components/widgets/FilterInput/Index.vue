@@ -105,7 +105,7 @@
             v-model="values"
             type="text"
             class="mb-0"
-            placeholder="Enter value"
+            placeholder="Digite o Conteudo"
           />
         </div>
         <woot-button
